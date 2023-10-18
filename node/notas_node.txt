@@ -1,0 +1,7 @@
+#notas node
+- install
+https://nodejs.org
+
+-comprobar versión
+node -v
+npm -v

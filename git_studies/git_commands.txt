@@ -1,0 +1,365 @@
+wsl
+git config --global user.name "aqui va el nombvre del usuario git"
+git config --global user.email correoelectronico
+git config --list :reviso los datos anteriormente introducidos
+
+git remote add origin url :con esto agrego enlazo el url para poder tener donde subir el código 
+	desgloce se pone git remote add (para que agrege el remoto) origin(este será el nombre de 	la url ) url(no se pone url si no que se pone el link de github sin comillas) 
+git fetch (me trae las ramas y cambios realizados)
+git init inicializo un repositorio de git
+git checkout reviso las ramas de git
+git branch -a ver las ramas locales 
+git branch "sebastian"
+git checkout -b nombrerama
+git branch -m nombre renombrar
+git branch --delete elimina una rama 
+git branch -d se elimina una rama 
+git diff primerarama..segundarama compara las ramas  no olvidar los dos puntos
+git merge nombredelarama fusiona las ramas 
+
+
+git rm --cached nombrearchivo que no tenga un seguimiento
+git commit -m "mensaje"
+git restore restaura el archivo como estaba inicialmente
+git log revisa los logs por commit 
+git checkout secopiaelnumerodecommit o hasta los primeros 5 numeros y el me restausa una version de los logs
+
+
+git remote -v muestra las conexiones del repositorio y la url  aparece en fetch y push el fetch jala y push empuja 
+git stash guarda los cambios en el equipo 
+git stash pop devuelve lo que guarde en memoria 
+
+git pull --rebase devuelve lso cambios subidos
+
+
+Learning Git
+References
+
+Magia Git Ben Lynn
+Git clone repository
+
+$ git clone url-here
+Init Git Repository
+
+$ git init
+Add all items to git commit repository
+
+$ git add .
+See all the files added in repository
+
+$ git status
+Add some items to git commit repository
+
+$ git add README.md test.txt ...
+Commit Git files
+
+$ git commit -m 'comments about commit here'
+Add remote repository
+
+$ git remote add name-of-origin url-repository-here
+Create a new branch
+
+$ git checkout -b name-of-new-branch
+See all git branchs
+
+$ git branch
+Commit all files in MASTER branch to repository
+
+$ git push name-of-origin master 
+Commit all files NAME-OF-BRANCH to repository
+
+$ git push name-of-origin name-of-branch
+See Git log
+
+$ git log
+Change Branch
+
+$ git checkout name-branch-to-change
+Undo all git add
+
+$ git reset .
+or
+$ git reset file-to-undo
+Git clone a specific branch in a github repo
+
+$ git clone -b {branch} git@github.com:{repo_name}.git
+
+
+
+
+
+4:54
+preparada perra rabalera
+4:55
+git init:
+Esto crea un subdirectorio nuevo llamado .git, el cual contiene todos los archivos necesarios del repositorio – un esqueleto de un repositorio de Git. Todavía no hay nada en tu proyecto que esté bajo seguimiento.
+git fetch:
+Descarga los cambios realizados en el repositorio remoto.
+git merge <nombre_rama>:
+Impacta en la rama en la que te encuentras parado, los cambios realizados en la rama “nombre_rama”.
+git pull:
+Unifica los comandos fetch y merge en un único comando.
+git commit -m “<mensaje>”:
+Confirma los cambios realizados. El “mensaje” generalmente se usa para asociar al commit una breve descripción de los cambios realizados.
+git push origin <nombre_rama>:
+Sube la rama “nombre_rama” al servidor remoto.
+git status:
+Muestra el estado actual de la rama, como los cambios que hay sin commitear.
+git add <nombre_archivo>:
+Comienza a trackear el archivo “nombre_archivo”.
+git checkout -b <nombre_rama_nueva>:
+Crea una rama a partir de la que te encuentres parado con el nombre “nombre_rama_nueva”, y luego salta sobre la rama nueva, por lo que quedas parado en esta última.
+git checkout -t origin/<nombre_rama>:
+Si existe una rama remota de nombre “nombre_rama”, al ejecutar este comando se crea una rama local con el nombre “nombre_rama” para hacer un seguimiento de la rama remota con el mismo nombre.
+git branch:
+Lista todas las ramas locales.
+git branch -a:
+Lista todas las ramas locales y remotas.
+git branch -d <nombre_rama>:
+Elimina la rama local con el nombre “nombre_rama”.
+git push origin <nombre_rama>:
+Commitea los cambios desde el branch local origin al branch “nombre_rama”.
+git remote prune origin:
+Actualiza tu repositorio remoto en caso que algún otro desarrollador haya eliminado alguna rama remota.
+git reset --hard HEAD:
+Elimina los cambios realizados que aún no se hayan hecho commit.
+git revert <hash_commit>:
+Revierte el commit realizado, identificado por el “hash_commit”.
+Git rm nombrearchivo
+Quita un archivo de git, es decir se elimina y no se subira
+Git rm --cached nombrearchivo
+Cached elimina en memoria ram  esdecir que no esta guardado en la base de datos
+Git log nombrearchivo
+Me dice el commit o el nombre del archivo o nombre de l commit y muestra la version más reciente
+Git show nombrearchivo
+Muestra los cambios realizados sobre un archivo
+Aparece el ultimo commit con el nombre del commit luego aparece un digg que es que se cambio luego el indec donde aparecen los indicadores de donde están los cambios en git
+Aparecen
+---a/nombrearchivo
++++b/nombrearchivo
+Esto quiere decir que se elimino y que se agrego
+@@-1,5 +1,6 @@
+Cuantos bites cambiaron
+Luego aparece en colores los cambios que se hicieron
+Si pongo un commit sin el –m para salir es esc shit zz
+Git log archivo
+(veo todos los cambios realizados )
+Git diff numero numero2
+Se pone el numero de el log, es decir debo primero hacer un git log copiar el commit o el numero del commit para poderlo pegar en el git diff luego el diff me dice contra que lo quiero comparar en este caso se debe poner el otro commit con el cual se quiere comparar los cambios realizados tratar de poner un orden es decir poner la más nueva o el head y luego poner la ultima o la que quiero comparar
+Para volver a una version vieja se pone:
+git diff ramaA ramaB
+Con esto se hace un versus(vs) entre dos ramas
+Git checkout nombrerama
+Cambio de rama
+Git reset <commit>
+Permite volver a una version anterior, se debe escribir el commit al cual yo quiero volver también se le puede agregar –hard para que todo vuelva al estado que se quiere y se hace así
+Git reset <commit> --hard
+Es el más peligroso y el que se usa
+Git reset <commit> --soft
+Este se usa para que lo que se tiene en staying, es decir en la memoria ram, es lo que volverá a estar como estaba antes si en tal caso ya se hizo un push y se quiere volver al archivo anterior , es decir "volver en el tiempo" se usará --hard
+Cuando se le da git log y reviso los anterior cambios se podrá evidenciar que los cambios que he hecho y que volvi ya no estarán, es decir los commits anteriores serán borrados, por lo cual se debe tener cuidado con el –hard
+Git log --stat
+Esto me muestra, que es lo que he agregado pero en los archivos especificos, es decir aparecería
+El nombre de l archivo con cuantas lineas o lo que se la ha agregado ya se aagregado el número aparecerá en bits
+Si quiero ver el estado de un archivo se podra hacer con el checkout de la siguiente manera:
+Git checkout <commit> <archivo.extension>
+Con esto cambiará el archivo a su version es decir ala version del commit
+Git checkout master <archivo.extension>
+Esto me traerá el ultimo archivo, es decir como lo tengo en la ram o como le hice un commit (ultimoi)
+Si se quiere quedar con el archivo de Git checkout <commit> <archivo.extension>
+Se hace el git add . Y el commit
+git log --oneline - Te muestra el id commit y el título del commit.
+git log --decorate- Te muestra donde se encuentra el head point en el log.
+git log --stat - Explica el número de líneas que se cambiaron brevemente.
+git log -p- Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+git shortlog - Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.
+git log --graph --oneline --decorate y
+git log --pretty=format:"%cn hizo un commit %h el dia %cd" - Muestra mensajes personalizados de los commits.
+git log -3 - Limitamos el número de commits.
+git log --after=“2018-1-2” ,
+git log --after=“today” y
+git log --after=“2018-1-2” --before=“today” - Commits para localizar por fechas.
+git log --author=“Name Author” - Commits realizados por autor que cumplan exactamente con el nombre.
+git log --grep=“INVIE” - Busca los commits que cumplan tal cual está escrito entre las comillas.
+git log --grep=“INVIE” –i- Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+git log – index.html- Busca los commits en un archivo en específico.
+git log -S “Por contenido”- Buscar los commits con el contenido dentro del archivo.
+git log > log.txt - guardar los logs en un archivo txt.
+Git fetch
+Sirve para traer una actualización pero no lo copia en los archivos
+Git pull con esto traigo todos los archivos a mi pc
+Git commit –am "mensaje"
+Este me sirve para agregar y realizar un commit, esto solo funcionará con los archivos a los cuales a los cuales se le hizo un add . Anteriormente
+Git show
+Me muestran los cambio que se han realizado en los archivos
+Git branch nombre
+Con esto se crea una rama
+Git checkout nombre
+Hago un cambio de rama
+Git log --all --graph
+Este comando me sirve para ver como se ha ido fusionando las ramas anteriores, es decir me permite ver los cambios aplicados anteriormente con las ramas
+Git log --all --graph --decorate --oneline
+Me muestra todo comprimido pero con todos los merges, es decir toda la historia desde que se comenzo a programar arriba es lo más reciente, y abajo es lo más antiguo
+Si el comando es largo y no me voy a acordar de ese comando se pueden poner alias
+Dentro de git
+Se hace de la siguiente manera
+Alias nombre_alias = "Git log --all --graph --decorate --oneline"
+Se puede poner cualquier comando de git para hacer un alias
+Para usar el comando es con git nombre_alias
+Crear un tag
+ Primero se copia el hash del commit
+Se pone el hash
+Git tag –a v0.1 -m "mensaje" numerohash
+Se crea un hash es decir una version en la cual se pone –a v0.1 que sería el numero de laversion
+-m serpia el mensaje y luego de terminar el mensaje se pone el hash o el commit
+Git tag
+Me muestra todos los tags que he creado
+Con git show-ref --tags
+Me muestra a que hash esta en lazado un tag u me muestra la version o el comentario que le he puesto al tag
+ESTE TAG SE ENVIA AL REPOSITORIO DE GITHUB
+ Esto se hace con git push origin --tags
+git push origin --tags
+En la parte de git aparecerá la version de github
+Para borrar un tag se hace de la siguiente manera ya sea desde github o por consola se hace:
+Git tag –d nombretag
+Con este comando elimino un tag –d es de delete
+4:55
+Git push rama :refs/tags/nombretag
+Con esto se refresca y elimina el tag de github
+Git show-branch
+Con esto veo las ramas que existen y su historia
+Git show-branch --all
+Me mostrará lo mismo que show-branch solo que con un poco más de información
+Esto me mostrará las historias de las ramas y si ha habido conflictos
+Gitk
+Con este comando se abre en un software de manera visual las historias de las ramas con esto aparecerá todo acerca de las ramas y de los tags creados
+git log –stat
+Muestro los cambios realizados
+Git rebase <nombre_rama>
+Trae todos los datos de una rama a mi rama en uso, y lo pone como si fuese un head es como si la rama que se le hace el rebase, fuese la rama principal, es decir la de producción es com,o hacer un merge no guarda cambios
+ es decir no guarda quien fue el que lo modifico
+Git branch –D <nombrerama>
+Elimino una rama
+Git stash
+Guardo cambios para después se usa para hacer un cambio de rama, si he hecho algún tipo de cambio en mi rama actual y quiero revisar una anterior, con este comando puedo tenerlos en stanby o a la espera, hacer el cambio de rama
+Git stash list
+Puedo ver la lista de stash que se encuentran pendientes
+Con este comando se puede ver cuántos stash tengo en la lista, WIP significa word in process
+Git stash pop
+Con esto abro el stash y lo devuelvo es decir si tengo un stash activo en la lista, este lo traerá en los archivos que modifique para poder seguir haciendo uso de lo que tenia y de como lo habia escrito
+Git stash branch <nombrenuevarama>
+Puedo hacer un stash pero aplicandoloa una nueva rama, es decir crea una rama a la cual se le pone un stash también por decirlo de otro modo es que se guardan los cambios pero estos se guardarán en la nueva rama
+Git stash drop
+Elimina un stash, si tnego un stash el cual no quiero guardar, solo quiero eliminar con este comando se puede eliminar ese cambio realizado
+Git clean --dry-run
+Con esto remuevo archivos que no se deberian subir
+Git clean –f
+Borra archivos que son copias  exepto las carpetas
+El parametro -d ayuda con el borrado de carpetas untracked. Por ejemplo: git clean -df hubiera borrado la carpeta “css - copia”
+Git log --oneline
+Me muestra el log en una linea sin necesidad de ver la "rama o ramitas"
+Git cherry-pick hash
+Me sirve para traer un commit, es decir si tengo que traer solo una parte de código el cual se guardo en un commit y está subido puedo desde la rama que lo necesito hacer primero un git log –oneline y ver los commits que estan aquí, luego traer el hash del commir y para traer el cambio se hace el comando git cherry-pick +hash para poder traer solamente esa parte de código
+Git reflog
+Este comando muestra todo, muesta el hash y el head y los head que se han "muerto" es decir en esta comando aparecerá todo lo que se ha borrado, es decir contiene absolutamente todo los commits y archivos si se ha boraddo algo con este comando aparecerá
+Git reset --HARD <hash>
+Resetea todo trae todos los archivos
+Git reset --SOFT
+Recupera lo que esta en staying lo que este en add .
+Git commit --amend
+Remendar es decir este comando sirve para que los cambios que hice me los pega al comando anterior al que se acaba de hacer una vez se envié el comando aparecera la consola, la cual preguntará si se quiere que se cambie el nombvre del commit anterior si realizo un cambio o si quiero continuar, lo que hago es ->(esc shift z z)
+Git grep <palabraabuscar>
+Con esto puedo buscar dentro de un proyecto alguna palabra que quiera
+Git grep la
+Muestra todas las lineas en donde se encuentra la palabra "la"
+Git grep –n <palabra>
+Me mostrará las lineas en donde se encuentra escrita la palabra que estoy buscando
+Git grep –c <palabra>
+Con esto cuento el número de veces en donde aparece la palabra escogida. Aparecera, el nombre del archivo : numero
+Si quiero buscar una etiqueta html se hace de la siguiente manera:
+Git grep -c "<p>"
+Git log –S <nombrecommit>
+Con esto se puede buscar por el nombre del commit
+git shortlog -sn = muestra cuantos commit han hecho cada miembros del equipo.
+git shortlog -sn --all = muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+git shortlog -sn --all --no-merge = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+git blame ARCHIVO = muestra quien hizo cada cosa linea por linea
+git COMANDO --help = muestra como funciona el comando.
+git blame ARCHIVO -Llinea_inicial,linea_final= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+**git branch -r **= se muestran todas las ramas remotas
+git branch -a = se muestran todas las ramas tanto locales como remotas
+Git blame <nombrearchivo.extension>
+Muestra quien hizo que cambio en un documento especifico
+Git blame -c <nombrearchivo.extension>
+Identa un poco mejor el muestreo de git blame
+Git blame <archivo.extension> -L (lineas separadas por ,)
+Muestra quien realizo cambios y cuando realizo los cambios
+Git blame <carpeta/archivo.extension> -L (lineas separadas por ,)
+Muestra quien realizo cambios y cuando, solo que aquí se está pasando una carpeta junto con el archivi
+Ejemplo
+Git blame cc/estilos.css -L 35, 53
+Se puede agregar el –c
+Ramas locales y ramas remotas
+Git branch –r
+Veo las ramas remotas
+Git branch –a
+Muestra en blanco las ramas que están locales y en rojo las ramas remotas
+git rm -r --cached Adjuntar_documentos/__pycache__
+git rm -r --cached tramitescrd/Adjuntar_documentos/__pycache__
+Con esto se borra los archivos que están siendo seguidos
+Deja de seguir
+New
+4:56
+Stashed:
+El stashed nos sirve para guardar cambios para después, Es una lista de estados que nos guarda algunos cambios que hicimos en Staging para poder cambiar de rama sin perder el trabajo que todavía no guardamos en un commit
+Ésto es especialmente útil porque hay veces que no se permite cambiar de rama, ésto porque porque tenemos cambios sin guardar, no siempre es un cambio lo suficientemente bueno como para hacer un commit, pero no queremos perder ese código en el que estuvimos trabajando.
+El stashed nos permite cambiar de ramas, hacer cambios, trabajar en otras cosas y, más adelante, retomar el trabajo con los archivos que teníamos en Staging pero que podemos recuperar ya que los guardamos en el Stash.
+git stash
+El comando git stash guarda el trabajo actual del Staging en una lista diseñada para ser temporal llamada Stash, para que pueda ser recuperado en el futuro.
+Para agregar los cambios al stash se utiliza el comando:
+git stash
+Podemos poner un mensaje en el stash, para asi diferenciarlos en git stash list por si tenemos varios elementos en el stash. Ésto con:
+git stash save "mensaje identificador del elemento del stashed"
+Obtener elelmentos del stash
+El stashed se comporta como una Stack de datos comportándose de manera tipo LIFO (del inglés Last In, First Out, «último en entrar, primero en salir»), así podemos acceder al método pop.
+El método pop recuperará y sacará de la lista el último estado del stashed y lo insertará en el staging area, por lo que es importante saber en qué branch te encuentras para poder recuperarlo, ya que el stash será agnóstico a la rama o estado en el que te encuentres, siempre recuperará los cambios que hiciste en el lugar que lo llamas.
+Para recuperar los últimos cambios desde el stash a tu staging area utiliza el comando:
+git stash pop
+Para aplicar los cambios de un stash específico y eliminarlo del stash:
+git stash pop stash@{<num_stash>}
+Para retomar los cambios de una posición específica del Stash puedes utilizar el comando:
+git stash apply stash@{<num_stash>}
+Donde el <num_stash> lo obtienes desden el git stash list
+Listado de elementos en el stash
+Para ver la lista de cambios guardados en Stash y así poder recuperarlos o hacer algo con ellos podemos utilizar el comando:
+git stash list
+Retomar los cambios de una posición específica del Stash || Aplica los cambios de un stash específico
+Crear una rama con el stash
+Para crear una rama y aplicar el stash mas reciente podemos utilizar el comando
+git stash branch <nombre_de_la_rama>
+Si deseas crear una rama y aplicar un stash específico (obtenido desde git stash list) puedes utilizar el comando:
+git stash branch nombre_de_rama stash@{<num_stash>}
+Al utilizar estos comandos crearás una rama con el nombre <nombre_de_la_rama>, te pasarás a ella y tendrás el stash especificado en tu staging area.
+Eliminar elementos del stash
+Para eliminar los cambios más recientes dentro del stash (el elemento 0), podemos utilizar el comando:
+git stash drop
+Pero si en cambio conoces el índice del stash que quieres borrar (mediante git stash list) puedes utilizar el comando:
+git stash drop stash@{<num_stash>}
+Donde el <num_stash> es el índice del cambio guardado.
+Si en cambio deseas eliminar todos los elementos del stash, puedes utilizar:
+git stash clear
+Consideraciones:
+El cambio más reciente (al crear un stash) SIEMPRE recibe el valor 0 y los que estaban antes aumentan su valor.
+Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con git add [nombre_archivo] con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando git stash -u (que guardará en el stash los archivos que no estén en el staging).
+Al aplicar un stash este no se elimina, es buena práctica eliminarlo.
+El git stasch se debe hacer en la misma rama en la cual yo la deje en standby ya que si no lo hago de esa manera puedo afectar la rama de otros
+WikipediaWikipedia
+Pila (informática)
+Una pila (stack en inglés) es una lista ordenada o estructura de datos que permite almacenar y recuperar datos, siendo el modo de acceso a sus elementos de tipo LIFO (del inglés Last In, First Out, «último en entrar, primero en salir»). Esta estructura se aplica en multitud de supuestos en el área de la informática debido a su simplicidad y capacidad de dar respuesta a numerosos procesos.
+Para el manejo de los datos cuenta con dos operaciones básicas: apilar (push), que coloca un objeto en la pila, y su operación inversa, retirar (o desapilar, pop), que retira el último elemento apilado.
+En cada momento solamente se tiene acceso a la parte superior de la pila, es decir, al último objeto apilad… Show more
+https://es.wikipedia.org/wiki/Pila_(inform%C3%A1tica)
+
+WikipediaWikipedia
+Last in, first out
+El término LIFO es el acrónimo inglés de Last In, First Out (“último en entrar, primero en salir” o UEPS), también conocido como FILO que es la sigla de First In, Last Out (“primero en entrar, último en salir”). Puede tener distintos significados según el contexto. (4 kB)
