@@ -141,7 +141,109 @@ let intervalo = setInterval(function () {
     i++;    
 }, 1000);
 
-//File system
+//File system // permite acceder a archicos en el sistema
 
 // como traer modulo
 const fs  = require('fs');
+const { dirname } = require('path');
+
+function leer(ruta, cb) {
+    fs.readFile(ruta, (err, data) => {
+        cb  (data.toString()); 
+    })
+}
+leer(__dirname + '/ archivo.text', console.log)
+
+function escribir(ruta, contenido, cb) {
+    fs.writeFile(ruta, contenido, function (err) {
+        if (err) {
+            console.error('No he podido escribirlo', err);        
+        } else {
+            console.log('Se ha escrito correctamente');
+        }
+    });
+} 
+escribir(__dirname + 'archivo.txt', 'Spy un archivo nuevo', console.log);
+
+//borar un archivo
+function borrar(ruta, cb) {
+    fs.unlink(ruta, cb);
+}
+borrar(__dirname + 'archivo1.txt', console.log);
+
+/// Funciones de consola
+console.log('Algo')
+console.info()
+console.error()
+console.warn() //warning
+console.table()//muestra datos en forma de tabla
+console.group()//agrupar multples logs
+console.groupEnd()
+console.count()
+console.countReset()
+
+/// Gestión de errores
+function serompe() {
+    return 3+z;
+}
+
+try {
+    serompe();
+} catch(err) {
+    console.error('Algo se ha roto');
+    console.error(err.message);
+}
+
+/// Ejecutar procensos hijos
+const { exec } = require('child_process');
+// es similar a // const exec = require('child_process').exec;
+
+exec('node modulos/consola.js', (err, stdout, stderr) => {
+    if (err) {
+        console.error(err);
+        return false;
+    }
+    console.log(stdout);
+})
+
+const { exec, spawn } = require('child_process');
+
+let proceso = spawn('ls', ['-la']);
+
+/// Respuestas http
+const http = require('http');
+
+http.createServer(function (req, res){
+    console.log('Nueva petición');
+    console.log(req.url);
+
+    res.writeHead(201, { 'Content-Type': 'text/plain' })
+    res.write('Hola hola');
+
+    res.end();
+}).listen(3000);
+
+function router(req, res) { 
+    console.log('Nueva petición');
+    console.log(req,url);
+
+    switch (req,url) {
+        case '/hola':
+            res.write('Hola que tal');
+            res.end();
+            break
+        default:
+            res.write('Error 404: no se lo que quieres');
+            res.end();
+
+    }
+}
+
+///os
+const os = require('os');
+console.log(os.arch()); // si es de x64 o x32
+console.log(os.platform()); // si estamos e lnux o wiendos
+console.log(os.cpus())
+console.log(os.cpus().legnth) // ver los núcleos
+console.log(os.freemem()); /// memoria libre en bytes
+console.log(os.homedir()); // ver directorio raiz
