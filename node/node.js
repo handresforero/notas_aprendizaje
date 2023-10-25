@@ -247,3 +247,72 @@ console.log(os.cpus())
 console.log(os.cpus().legnth) // ver los núcleos
 console.log(os.freemem()); /// memoria libre en bytes
 console.log(os.homedir()); // ver directorio raiz
+
+//procesos
+//antes que termine 
+procces.on('beforeExit', () => {
+    console.log('El va a terminar');
+})
+
+//despúes del exit no se ejecuta nada dentro del process on
+procces.on('exit', () => {
+    console.log('El proceso acabó');
+})
+
+//capturar el proceso cuando falla
+process.on('uncaughtException', (err, origen) => {
+    console.error('Se olvidó capturar un error');
+    console.error(err);
+})
+//para promesas que se han rechazado
+process.on('uncaughtRejection')
+
+//para traer un módulo
+const modulo = require('./modulo');
+modulo();
+//esto iria en el mpodulo
+function saludar() {
+    console.log('hola');
+}
+module.exports = saludar;
+
+/// Para cifrar archivos
+ const bcrypt = require('bcrypt');
+
+ const password = '123423435';
+ bcrypt.hash(password, 5, function(err, hash) {
+    console.log(hash)
+ })
+
+/// libreria moment es para trabajar con fechas
+const moment = require('moment');
+let ahora = moment();
+console.log(ahora.toString());
+console.log(ahora.format('YYYY/MM/DD - HH:mm'))
+
+//Para trabajar con imagenes
+const sharp = require('sharp');
+sharp('original.png')
+ .resize(80)
+ .grayscale()
+ .toFile('resized.png');
+
+///Buffer
+//let buffer = Buffer.alloc(4);
+//console.log(buffer);
+//let buffer = Buffer.from('Hola'); // traduce el string a binario 
+
+//crear un abecedario con loop for
+let abc = Buffer.alloc(26);
+for (let i = 0; i < 26; i++) {
+    abc[i] = i + 97;
+}
+
+// stram es para archivos muy grandes para hacerlo de a poquitos gruandando por paques con los chunk
+const fs = require('fs');
+let data = '';
+let readableStream = fs.createReadStream(__dirname + 'iput.txt');
+readableStream.setEncoding('UTF8');
+readableStream.on('data', function (chunk) {
+    console.log(chunk)
+})

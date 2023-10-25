@@ -5,3 +5,12 @@ https://nodejs.org
 -comprobar versión
 node -v
 npm -v
+
+npm es un isntalador de paquetes
+
+en nvm para instalar una version diferente de node es nvm insall 16
+para usar nvm use 16
+
+is odd es un paquete para verificar si un número es impar
+
+npm i bcrypt // es para cifrar archvos
