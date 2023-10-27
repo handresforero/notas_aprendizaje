@@ -1,0 +1,31 @@
+$Para correr docker compose entrando al bash
+docker-compose up
+
+$levantar servicio docker sin entrar a bash
+docker-compose up -d
+
+$para entrar a la consloa de docker
+docker exec -it tramitescrd-web-1 bash
+
+$Listar volumenes
+docker volume ls 
+
+$Eliminar contenendor
+docker compose down -v
+
+$Crear contenendor
+docker compose up -d db
+
+$Crear contenendor APP
+docker compose build tramitescrd
+docker compose up tramitescrd
+
+
+## Docker para postgres
+- En ubuntu descargar docker compose
+docker-compose run web django-admin startproject djangodockertest .
+docker-compose run web
+
+
+docker-compose up -d
+docker exec -it tramitescrd-web-1 bash
