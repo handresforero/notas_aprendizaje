@@ -310,9 +310,95 @@ for (let i = 0; i < 26; i++) {
 
 // stram es para archivos muy grandes para hacerlo de a poquitos gruandando por paques con los chunk
 const fs = require('fs');
+const { error } = require('console');
 let data = '';
 let readableStream = fs.createReadStream(__dirname + 'iput.txt');
 readableStream.setEncoding('UTF8');
 readableStream.on('data', function (chunk) {
     console.log(chunk)
 })
+
+// cuanto se demora, tiempos
+let suma = 0
+console.time('bucle');
+for (let i = 0; i < 1000000; i++) {
+    suma += 1;
+}
+console.timeEnd('bucle');
+
+//Debugger
+// se pone en cmd node --inspect <nombre archivo>.js
+//En chrome se ponde inspector
+
+//El primera parametro en todas las funcienos deberia ser el error
+function asincrona() {
+    setTimeout(function() {
+        try {
+            let a = 3 + z;
+            callback(null, a);
+        } catch (e) {
+            callback(e);
+        }
+    }, 1000);
+}
+asincrona(function (err,dato) {
+    if(err) {
+        console.error('Tenemos un errro');
+        console.error(err);
+        return false;
+    }
+})
+
+//Scraping
+//lanza chrome sin verlo
+//npm i puppeteer
+
+const puppeteer = require('puppeteer');
+
+//funcion asincrona
+(async () => {
+    //coddigo
+    console.log('Lanzar navegador');
+    const browser = await puppeteer.launch();
+    //const browser = await puppeteer.launch({ headless: false }); //Esto para poder ver el navegador
+
+    const page = await browser.newPage();
+    await page.goto('http:')
+
+    var titulo1 = await page.evaluate(() => {
+        const h1 = document.querySelector('h1');
+        console.log(h1.innerHTML);
+        return h1.innerHTML;
+    });
+
+    console.log(titulo1);
+
+    console.log('Cerramos navegador')
+    browser.close()
+})();
+
+///Automatizar procesos
+//npm i -gulp gulp-server-livereload
+const gulp = require('gulp');
+
+gulp.task('build', function(cb) {
+    //codigo
+})
+
+///aplicación de escritorio
+//electron: npm init
+//npm i electron
+const { app, BrowserWindow} = require('electron');
+
+let mainWindow;
+
+app.on('ready', crearVentana);
+
+function createWindow() {
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+    });
+
+    mainWindow.loadFile('indes.html')
+}
