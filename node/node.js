@@ -402,3 +402,59 @@ function createWindow() {
 
     mainWindow.loadFile('indes.html')
 }
+
+//Funcón dentro de otra función
+function nombreCompleto (name, lastname) {
+    return name + " " + lastname
+}
+function saludo (name, lastname, username) {
+    const completeName = nombreCompleto(name, lastname);
+
+    console.log("Mi nombre es " + completeName + "pero me gusta" + username);
+}
+
+//condicioanales if y switch
+
+const tipoSuscripcion = "Basic";
+
+switch (tipoSuscripcion) {
+    case "Free":
+        console.log("");
+        break;
+    case "Basic":
+        console.log("");
+        break;
+
+}
+
+///Bucle for
+for (let i = 0; i < 5; i++) {
+    console.log('El valor es ' + i);
+}
+
+///Bucle While
+let h = 0;
+while(h<5) {
+    console.log('El valor es ' + h);
+    h++;
+}
+
+///promt es una funcion que saca un pop up en el navegador
+let pregunta = promt('Cuánto es 2+2')
+
+```js
+
+///Para que en archivo .md coloree segun lengujaje, truco de ,mac down
+```
+
+///array
+const array = [];
+//para acceder a un elemento es por el index
+array[0]
+array.length
+
+/// objeto es similar a un dict en python 
+const objeto = {'nombre': 'predro'}
+objeto.nombre
+Object.values(objeto)
+Object.keys(objeto)
