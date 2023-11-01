@@ -14,3 +14,9 @@ para usar nvm use 16
 is odd es un paquete para verificar si un número es impar
 
 npm i bcrypt // es para cifrar archvos
+
+en html, para ejecutar codigo js se usa la etiqueta script
+
+
+///para llamar en html java
+<script src="./script.js"></script>

@@ -458,3 +458,25 @@ const objeto = {'nombre': 'predro'}
 objeto.nombre
 Object.values(objeto)
 Object.keys(objeto)
+
+///reducción de condicionaesl con return
+
+const tiposDeSuscripciones = {
+    free: 'Solo puedes tomar cursos gratis',
+    basic: 'Puedes tomar casi todos los cursos',
+    expert: 'Cursos durante un año',
+    expertduo: 'Alguien más pude topamr cursos'
+}
+
+function conseguirTipoSuscripcion(suscripcion) {
+    if (tiposDeSuscripciones[suscripcion]) {
+        console.log(tiposDeSuscripciones[suscripcion]);
+        return;        
+    }
+    console.warn('Ese tipo de suscripción no existe');
+}
+
+conseguirTipoSuscripcion('free')
+
+
+///en html, para ejecutar codigo js se usa la etiqueta script
