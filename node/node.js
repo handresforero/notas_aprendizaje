@@ -480,3 +480,61 @@ conseguirTipoSuscripcion('free')
 
 
 ///en html, para ejecutar codigo js se usa la etiqueta script
+
+/// conectar desde js un html
+//query selector funciona parecido a css
+const h1 = document.querySelector('h1')
+//elementos creados es con #
+const input1 = document.querySelector('#calculo1');
+
+///Escribir html desde js
+h1.innerHTML = 'Patito feo'; 
+//obtener atributo
+h1.getAttribute('class');
+//cambiar atributo
+h1.setAttribute('class', 'rojo');
+//crear elmento desde cero
+document.createElement('img');
+
+///addEvenListener
+const btn = docuemnt.querySelector('#btnCalcular');
+
+btn.addEventListener('click', btnOnClick);
+
+function btnOnClick(){
+    const sumaInputs = input1.value + input2.value;
+    h1.innerHTML = 'Resultados: ' + sumaInputs;
+}
+
+///arrays
+const productList = [];
+productList.push({
+    name:'Bike',
+    price:'120',
+    image:'http://....',
+})
+
+/// en html se llama for (product of productsList) { ....}
+
+///PAra comentar varias líneasw de código /* codigo varias lineas */
+
+for (product of productList) {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    const img = document.createElement('img');
+    img.setAttribute('src', product.image);
+
+}
+
+//fuente para ver mas appenChild en bucle for: https://platzi.com/new-home/clases/3271-javascript-practico/51023-lista-de-productos-html-a-partir-de-arrays/
+
+/// para saber tipo de variable
+typeof 40
+
+///declarar variable
+var edad;
+///inicializar variable
+edad = 30;
+
+ 

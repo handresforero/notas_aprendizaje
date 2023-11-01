@@ -363,3 +363,9 @@ https://es.wikipedia.org/wiki/Pila_(inform%C3%A1tica)
 WikipediaWikipedia
 Last in, first out
 El término LIFO es el acrónimo inglés de Last In, First Out (“último en entrar, primero en salir” o UEPS), también conocido como FILO que es la sigla de First In, Last Out (“primero en entrar, último en salir”). Puede tener distintos significados según el contexto. (4 kB)
+
+$fork es para cuando se es colaborador de un pryecto, traer todos los commits, se puede hacer desde github
+
+$pull request es para hacer contribuciones a proyectos ajenos
+
+//para ahcer deploy en setting, pagtens, se selecciona soruce, no presionar choose theme. se le dice cual rama es la de despliegue, se le da boton a salvar y luego arroja url con el repositorio, se demora un pco en cargar y en la url se le agrega la ruta a el html(ej: /index.html)
