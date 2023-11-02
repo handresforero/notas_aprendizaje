@@ -369,3 +369,6 @@ $fork es para cuando se es colaborador de un pryecto, traer todos los commits, s
 $pull request es para hacer contribuciones a proyectos ajenos
 
 //para ahcer deploy en setting, pagtens, se selecciona soruce, no presionar choose theme. se le dice cual rama es la de despliegue, se le da boton a salvar y luego arroja url con el repositorio, se demora un pco en cargar y en la url se le agrega la ruta a el html(ej: /index.html)
+
+$ingornar carpeta
+postgres_data

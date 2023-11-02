@@ -29,3 +29,17 @@ docker-compose run web
 
 docker-compose up -d
 docker exec -it tramitescrd-web-1 bash
+
+$para levantar el contendedor con el servicio especifico
+docker-compose up -d postgres
+
+$para verificar que si esté corriendo el contendedor (inspeccionar que cosas están corriendo)
+docker_compose ps
+
+$para bajar un servicio específico
+docker_compose down postgres
+
+$Para que la BD postgres guarde información dentro de un contenedor se tien que crear un volumen
+
+$Si se quiere verificar la ubicación de una imagen se hace en hub.docker.com/postgres
+

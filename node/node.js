@@ -537,4 +537,118 @@ var edad;
 ///inicializar variable
 edad = 30;
 
- 
+///Funciones
+//Funcion declarativa
+
+function miFunction() {
+    return 3;
+}
+miFunction();
+//función de expresión o anónima 
+var miFunction = function() {
+    return a+b;
+}
+miFunction();
+
+///Unir cadenas de texto
+function saludarEstudiantes(estudiante) {
+    console.log(`Hola ${estudiante}`);
+}
+
+///Hoisting: las variables se tiene s que declarar antes de llamarlas pero las funciones si se pueden llamar antes de definirlas
+
+///Las ecuaciones implicitas es cuando el legunaje njos ayuda y cambia un tipo de valor a otro valor, en la ecuación explicita obligamos a cambiar el valor
+
+//pasar de string a number
+a = 20;
+b = String(a);
+c = Number(b);
+
+//NaN es not a number
+///Truthy - Falsy
+Boolean(null) ///0, undefine, NaN, ""
+
+///Oepradores
+//negar: !false
+// == compara
+// === valida que los dos sean estrictamente iguales, 
+// a && b //significa si a es verdad y también b es verdad
+// a || b // si a o b es verdad se cumple la condición 
+// ++ // incrementa valor en 1, // +=2 //suma valor de 2 
+
+//operador tenario
+condition ? true: false;
+//ejemplo
+var numero = 1;
+var resultado = numero === 1 ? "Sí soy uno" : "No soy uno";
+
+///arrays
+var frutas = [];
+var agregaAlFinal = frutas.push('Uvas');
+var AgregaAlPirincipio = frutas.unshift('Cereza');
+var elimina = frutas.pop('Uvas');
+var Borra1erElementoSiEs = frutas.shift('Uvas');
+var pocision = frutas.indexOf("Cereza");
+
+///objetos
+//this es una variable que hace refersencia al objeto
+var miAuto = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    annio: 2020,
+    detalleDelAuto: function(){
+        console.log(`Auto ${this.modelo} ${this.annio}`);
+    }
+};
+miAuto.detalleDelAuto()
+
+///función constructora
+function auto(marca, modelo, annio) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.annio = annio;
+}
+//el operador new genera una nueva instancia de la función constructora (instancia es un objeto que deriva de otro objeto)
+var autoNuevo = new auto("Tesla", "MOdel 3", 2020);
+var autoNuevo2 = new auto("Tesla", "Model X", 2018);
+var autoNuevo3 = new auto("Toyota", "Corolla", 2021);
+
+//recorrido de arrays
+var articulos = [
+    {nombre:"Bici", costo: 3000},
+    {nombre:"Tv", costo: 2500},
+    {nombre:"Libro", costo: 320},
+    {nombre:"Celular", costo: 10000},    
+];
+var articulosFiltrados = articulos.filter(function(articulo) {
+    return articulo.costo <= 500
+});
+//el 2do método de filtro es el map que crea un array con esto
+var nombreArticulos = articulos.map(function(articulo) {
+    return articulo.nombre;
+});
+//3cer método
+var encuentraArticulo = articulos.find(function(articulo) {
+    return articulo.nombre === "Laptop"
+});
+//for each
+articulos.forEach(function(articulo) {
+    console.log(articulo.nombre)
+})
+// otro metodo filtrado
+var articulosBaratos = articulos.some(function(articulo) {
+    return articulo.costo <= 700;
+})
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//https://insomnia.rest/download
+// Insomnia e spara prbar los endpoints
