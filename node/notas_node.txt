@@ -20,3 +20,6 @@ en html, para ejecutar codigo js se usa la etiqueta script
 
 ///para llamar en html java
 <script src="./script.js"></script>
+
+//instalar libreria para postgres
+npm install pg

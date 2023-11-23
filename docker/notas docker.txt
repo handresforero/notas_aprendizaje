@@ -15,6 +15,7 @@ docker compose down -v
 
 $Crear contenendor
 docker compose up -d db
+#up es para levantar, d es detach osea en segundo plano db es el nombre del servicio que se definio
 
 $Crear contenendor APP
 docker compose build tramitescrd
@@ -42,4 +43,29 @@ docker_compose down postgres
 $Para que la BD postgres guarde información dentro de un contenedor se tien que crear un volumen
 
 $Si se quiere verificar la ubicación de una imagen se hace en hub.docker.com/postgres
+
+$El volumes es para que la informacion persista  quede guardada data en BD despues de bajar el servicio, 
+para esto se tiene que cerar la carpeta donde se guardara la data y se tiene que ignorar si no se quiere
+que la data se suba a git
+
+$para conectarse a la BD
+docker-compose postgres bash
+psql -h localhost -d my_store -U nico
+#donde h es host d base y U usuario
+
+$para saber estructura de BD de postgres
+\d+
+
+$Para salirse de la BD
+\q
+
+$salirse de contenedor bash
+exit
+
+$tener id de la imagen
+docker ps
+
+$saber ip de la imagen
+docker inspect <id de la imagen>
+docker inspect 64b675cfe546
 
