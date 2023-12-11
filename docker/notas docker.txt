@@ -69,3 +69,5 @@ $saber ip de la imagen
 docker inspect <id de la imagen>
 docker inspect 64b675cfe546
 
+$Ver postgres en docker
+exec postgres bash

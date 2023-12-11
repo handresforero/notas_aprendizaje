@@ -657,3 +657,98 @@ var articulosBaratos = articulos.some(function(articulo) {
 
 //persistencia en la BD
 //repositorio//github.com/platzi/curso-nodejs-postgres/tree/main/services
+
+////conectar node a postgres
+//se instala node postgres
+//npm install pg
+//se crea caapa libs que se encarga d ela conexión a terceros y se crea archivo postgres.js
+const { Client } = require('pg');
+
+async function getConection() {
+    const  client = new Client({
+        host: 'localhost',
+        port: 5432,
+        user: 'nico',
+        password: 'admin123',
+        database: 'my_store',
+    });
+    await client.connect();
+    return client;
+}
+module.exports = getConection;
+//se coloca de forma asincrona ya que devuelve una promesa como retorno
+
+//se crea carpeta services y un archivo user.service.js
+const boom = require('@hapi/boom');
+
+//para generar la importación
+const getConnection  = require('../libs/postgres');
+//en finde se eejecuta la conexión
+
+class UserService {
+    constructor() {}
+
+    async create(data) {
+        return data;
+    }
+
+    async find() {
+        const client = await getConection();
+        const rta = client.query('SELECT * FROM tasks');
+        return rta.rows;
+    }
+
+
+}
+
+///////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///Pooling es para crear varias conexiones a la BD sin llamar por cada una un GetConecction
+//se crea archivlo en caperta libs postgres.pool.js
+const { Pool } = require('pg');
+
+const { config } = require('./../config/config');
+
+const USER = encodeURIComponent(config.dbUSER);
+const PASSWORD = encodeURIComponent(config.dbPasword);
+const URI = `postgres://${USER}:${PASSWORD}@${config.dbhost}:${config.dbPort}/${config.dbName}`;
+
+const  pool = new Pool({ connectionString: URI });
+
+module.exports = pool;
+
+//luego en otro archivo se exporta y se escucha si hay errores
+const pool = require('..libs/postgres.pool');
+
+class ProductsService {
+constructor(){
+    this.products = [];
+    this.generate();
+    this.pool = pool;
+    this.pool.on('error', (err) => console.log(err))
+}
+
+async find() {
+    const query = 'SELECT * FROM tasks';
+    const rta = await this.pool.query(query);
+    return rta.rows;
+}
+}
+
+
+///para lleer el .evn
+require('dotenv').confing();
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+///ORM
+// se usa sequelize(para javascript) o typeorm(para typescript) 
+//npm install --save sequelize
+//npm install --save pg pg-hstore
+//con loggin = true se obtiene que cada vez que se haga consulta en BD se obtenga en cosloa query sql
+
+//////Para hacer migraciones  a la BD
+//npm i sequelize-cli --save-dev

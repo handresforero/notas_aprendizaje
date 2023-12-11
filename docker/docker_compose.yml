@@ -9,5 +9,6 @@ services:
       - POSTGRES_PASSWORD=admin123
     ports:
       - 5432:5432
+    #para agregar persistencia al contenedor y se guarde la data cuando se baje el servicio
     volumes: 
      -  ./postgres_data:/var/lib/postgresql/data

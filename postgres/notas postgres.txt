@@ -1,0 +1,2 @@
+$ver schema de base y relaciones
+\d+
