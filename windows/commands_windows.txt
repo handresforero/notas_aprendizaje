@@ -1,0 +1,2 @@
+$ para saber cuanta memoria ram se puede poner
+wmic memphysical get MaxCapacity, MemoryDevices

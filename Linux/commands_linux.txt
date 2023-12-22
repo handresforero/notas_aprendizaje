@@ -1,0 +1,45 @@
+$ version de linux y detalles de distribución
+uname -a
+
+$version de linux
+uname -srm
+
+$otra opcion par tener información detallada de SO
+sudo apt install neofetch
+
+$el directorio bin contiene todos los programas básicos de codigo binario y funcionamiento base
+
+$el directorio boot tienne los archios para que el sismtema operativo arranque, contiene las copias dekl kernel
+
+$dev es para que tdos los archivos y dispositivos fucionen
+
+$ etc alamcea archivios secundarios, los de cconfiguracion global y los esqueleto que son archivos plantilla
+ 
+ $en home alamcena los datos de usuairo del sistema
+
+ $root, caperta asignada para usuairo administrador
+
+ $lib guarda las bibliotecas o paqutes de los programas
+
+ $medio isntalalos dispositovs montados, ej memoria usb
+
+ $mnt es parecida a media
+
+ $opt se almacenan las bibliotecas temporales
+
+ $sbin alamcena archivos binarios del sistema, solo root puede acceder a esqueleto
+
+ $USR aplicaicnes instaladas al sistema como ofimática y controladores de hardware
+
+ $la interfaz gráfica se llama GUI
+
+ $VAR almacela temporal como logs, temp, caché, copias de seguridad
+
+ $distro son las direferntes distribvuviones de linux basadas en el npucleo, osea el kernel
+
+ Redhat es una distro para servidores
+
+ distro ejemplo es Ubuntu, es basado a Gnome
+ linux MINT: es inpsirado en windows, otro es Zorin OS, Elentary OS es basada en aple, pop os es mezcla de wiodows y os, usado para dep leanring, edición multimendia
+
+ Distro para computadores lentos: puppy, ocupa 300MB, Windows ocupa 5 GB, la m´s pequeña es damm smal con 50mb y con 16 de ram
